@@ -55,10 +55,12 @@ function checkCashRegister(price, cash, cid) {
     final.change = cid
     return final
   }
+  
   if (change > total) {
     final.status = "INSUFFICIENT_FUNDS"
     return final
   }
+  
   for (let i = cid.length-1; i >= 0; i--) {
     let amount = 0
     while (change >= (currencyAmount[i][1]-0.001) && cid[i][1] > 0) {
@@ -71,6 +73,7 @@ function checkCashRegister(price, cash, cid) {
       i = cid.length-1
     }
   }
+  
   if (change > 0) {
     final.status = "INSUFFICIENT_FUNDS"
     final.change = []
