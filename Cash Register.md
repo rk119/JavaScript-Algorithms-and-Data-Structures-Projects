@@ -49,6 +49,7 @@ function checkCashRegister(price, cash, cid) {
   let final = {status: "", change:[]}
   let total = cid.reduce((sum, el) => sum + el[1], 0)
   let change = cash - price;
+  
   if (change == total) {
     final.status = "CLOSED"
     final.change = cid
